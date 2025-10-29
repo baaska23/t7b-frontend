@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../api/product';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class ProductService {
@@ -33,5 +34,9 @@ export class ProductService {
             .toPromise()
             .then(res => res.data as Product[])
             .then(data => data);
+    }
+
+    getSupabaseSampleData() {
+        return this.http.get<any>(environment.url + "/hello");
     }
 }
