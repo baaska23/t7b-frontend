@@ -1,0 +1,82 @@
+<div class="table-card surface-card">
+  <p-contextMenu #cm [model]="menus" (onShow)="onShow(selectedItem)"></p-contextMenu>
+
+  <p-table [value]="list" [columns]="selectedColumns" [(contextMenuSelection)]="selectedItem" [contextMenu]="cm" [sortOrder]="sortOrder" [sortField]="sortField" 
+    [customSort]="true" [rowHover]="true" [reorderableColumns]="true" [resizableColumns]="true" [loading]="isRefresh" loadingIcon="" selectionMode="single"
+     columnResizeMode="expand" responsiveLayout="scroll" styleClass="p-datatable-gridlines p-datatable-striped p-datatable-sm"
+    (onColReorder)="onColumn($event)" (sortFunction)="onSort($event)">
+    <ng-template pTemplate="caption">
+      <div #header class="flex flex-wrap justify-content-between align-items-center py-2">
+        <h2 class="hidden lg:block">{{ title | translate }}</h2>
+        <h3 class="lg:hidden">{{ title | translate }}</h3>
+        <div class="flex flex-wrap gap-2">
+          <button class="button success" pButton pRipple type="button" label="{{ 'common.new' | translate }}" icon="pi pi-plus" pTooltip="{{'common.newTooltip' | translate}}" tooltipPosition="bottom" (click)="onNew()"></button>
+          <p-multiSelect [options]="columns" [(ngModel)]="selectedColumns" selectedItemsLabel="{{ 'common.selectedColumn' | translate }}" placeholder="{{ 'common.select' | translate }}" 
+           [filter]="true" optionLabel="header" styleClass="selected-columns" (onPanelHide)="onColumn($event)" emptyFilterMessage="{{'common.emptyFilterMessage' | translate}}"
+           pTooltip="{{'common.selectedColumnTooltip' | translate}}" tooltipPosition="bottom">
+          </p-multiSelect>
+          <button pButton pRipple type="button" [disabled]="isRefresh" label="{{ 'common.refresh' | translate }}"
+            icon="pi pi-refresh" class="button" pTooltip="{{'common.refreshTooltip' | translate}}" tooltipPosition="bottom" (click)="refresh()"></button>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let col of selectedColumns" pResizableColumn pReorderableColumn [pSortableColumn]="col.field">
+          {{ col.header | translate }} <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+        <th class="text-center">{{ 'common.action' | translate }}</th>
+      </tr>
+      <tr>
+        <th *ngFor="let col of selectedColumns" pReorderableColumn class="text-center">
+          <container-element [ngSwitch]="col.type">
+              <p-inputNumber [(ngModel)]="search[col.field].value" [format]="false" mode="decimal" inputStyleClass="w-full"
+                  *ngSwitchCase="'number'" (keyup.enter)="onSearch($event)" (onBlur)="onSearch($event, col.field)">
+              </p-inputNumber>
+              <p-triStateCheckbox [(ngModel)]="search[col.field].value" class="flex justify-content-center"
+                  *ngSwitchCase="'boolean'" (onChange)="onSearch($event)"></p-triStateCheckbox>
+              <p-dropdown [options]="listOptions[col.field]" [(ngModel)]="search[col.field].value" placeholder="{{ 'common.select' | translate }}" [showClear]="true" emptyFilterMessage="{{'common.emptyFilterMessage' | translate}}" emptyMessage="{{'common.emptyMessage' | translate}}"
+                  appendTo="body" optionLabel="name" optionValue="code" styleClass="w-full" [virtualScroll]="true" [itemSize]="30"
+                  *ngSwitchCase="'dropdown'" (onChange)="onSearch($event);" [filter]="true" filterBy="name">
+              </p-dropdown>
+              <input type="text" class="w-full" pInputText [(ngModel)]="search[col.field].value"
+                  *ngSwitchDefault (keyup.enter)="onSearch($event, col.field)" (blur)="onSearch($event, col.field)">
+          </container-element>
+        </th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item let-index="rowIndex">
+      <tr [pContextMenuRow]="item" [pSelectableRow]="item">
+        <td *ngFor="let col of selectedColumns">
+            <container-element [ngSwitch]="col.type">
+              <ng-container *ngSwitchCase="'instant'">{{ item[col.alias] | date: 'yyyy-MM-dd HH:mm' }}</ng-container>
+              <ng-container *ngSwitchCase="'localDate'">{{ item[col.alias] | date: 'yyyy-MM-dd' }}</ng-container>
+              <ng-container *ngSwitchDefault>
+                {{ item[col.alias] }}
+              </ng-container>
+            </container-element>
+        </td>
+        <td class="text-center">
+          <button *ngIf="permission.read" pButton pRipple icon="pi pi-eye" pTooltip="{{ 'common.view' | translate }}" class="p-button-rounded button success m-1"
+            (click)="onView(item)"></button>
+          <button *ngIf="permission.edit" pButton pRipple icon="pi pi-pencil" pTooltip="{{ 'common.edit' | translate }}" class="p-button-rounded button m-1"
+            (click)="onEdit(item)"></button>
+          <button *ngIf="permission.delete" pButton pRipple icon="pi pi-trash" pTooltip="{{ 'common.delete' | translate }}" tooltipPosition="bottom" class="p-button-rounded button warning m-1"
+            (click)="onDelete(item)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-paginator #paginator [first]="pageable.page * pageable.size" [rows]="pageable.size" [totalRecords]="total"
+    [rowsPerPageOptions]="rowsPerPageOptions" [showCurrentPageReport]="true" currentPageReportTemplate="{{ 'common.pageReportTemplate' | translate }}" 
+    (onPageChange)="onPage($event)"></p-paginator>
+  <p-confirmDialog #confirm key="deleteConfirm" [ngClass]="{'deleteConfirm': deleteWarnMsg.length}" [breakpoints]="{'1200px': '50vw', '960px': '70vw', '640px': '90vw'}" [style]="{width: '30vw'}">
+    <ng-template pTemplate="footer">
+      <p-messages [closable]="false" [(value)]="deleteWarnMsg" [enableService]="false"></p-messages>
+      <button type="button" class="p-button-text" pButton icon="pi pi-times" label="{{ 'common.no' | translate }}" (click)="confirm.reject()"></button>
+      <button type="button" pButton icon="pi pi-check" label="{{ 'common.yes' | translate }}" (click)="confirm.accept()"></button>
+    </ng-template>
+  </p-confirmDialog>
+</div>
