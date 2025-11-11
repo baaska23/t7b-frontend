@@ -11,9 +11,11 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from 'src/t7b/lib/auth.interceptor';
 
 @NgModule({
     declarations: [
@@ -25,6 +27,7 @@ import { DialogService } from 'primeng/dynamicdialog';
         TranslateModule.forRoot()
     ],
     providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, ConfirmationService, MessageService, DialogService
