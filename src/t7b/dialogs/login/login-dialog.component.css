@@ -1,0 +1,10 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    background-color: #83afe7;
+}
+
+.login-btn {
+    width: 15%;
+    height: 30px;
+}
