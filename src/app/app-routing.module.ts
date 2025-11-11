@@ -7,6 +7,12 @@ import { AppLayoutComponent } from "./layout/app.layout.component";
     imports: [
         RouterModule.forRoot([
             {
+                path: 't7b', component: AppLayoutComponent,
+                children: [
+                    {path: '', loadChildren: () => import('../t7b/t7b.module').then(m => m.t7bModule)}
+                ]
+            },
+            {
                 path: '', component: AppLayoutComponent,
                 children: [
                     { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
