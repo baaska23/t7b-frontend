@@ -4,11 +4,12 @@ import { ProductService } from "src/app/demo/service/product.service";
 import { BaseListComponent } from "src/t7b/core/base-list/base-list.component";
 import { Injector } from "@angular/core";
 import { LoginDialogComponent } from "src/t7b/dialogs/login/login-dialog.component";
+import { NavbarComponent } from "src/t7b/components/navbar/navbar.component";
 
 @Component({
     selector: 'app-home-page',
     templateUrl: './home-page.component.html',
-    styleUrls: ['./home-page.component.css']
+    styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent extends BaseListComponent {
     constructor(

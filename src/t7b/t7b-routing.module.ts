@@ -12,6 +12,7 @@ import { ThesesPageComponent } from "./pages/theses/theses-page.component";
 
 @NgModule({
     imports: [RouterModule.forChild([
+        { path: '', redirectTo: 'home', pathMatch: 'full' },
         {path: 'admin', component: AdminPageComponent},
         {path: 'class', component: ClassPageComponent},
         {path: 'discuss', component: DiscussPageComponent},

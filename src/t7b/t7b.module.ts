@@ -10,12 +10,16 @@ import { ProfilePageComponent } from "./pages/profile/profile-page.component";
 import { SendPageComponent } from "./pages/send/send-page.component";
 import { ThesesPageComponent } from "./pages/theses/theses-page.component";
 import { t7bRoutingModule } from "./t7b-routing.module";
+import { NavbarComponent } from "src/t7b/components/navbar/navbar.component";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
     imports: [
-        CommonModule,
-        t7bRoutingModule
-    ],
+    CommonModule,
+    RouterModule,
+    t7bRoutingModule,
+    NavbarComponent
+],
 
     declarations: [
         AdminPageComponent,
