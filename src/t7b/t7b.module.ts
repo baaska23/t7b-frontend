@@ -12,13 +12,17 @@ import { ThesesPageComponent } from "./pages/theses/theses-page.component";
 import { t7bRoutingModule } from "./t7b-routing.module";
 import { NavbarComponent } from "src/t7b/components/navbar/navbar.component";
 import { RouterModule } from "@angular/router";
+import { FeatureCard } from "./components/feature-card/feature-card.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 @NgModule({
     imports: [
     CommonModule,
     RouterModule,
     t7bRoutingModule,
-    NavbarComponent
+    NavbarComponent,
+    FeatureCard,
+    FooterComponent
 ],
 
     declarations: [

@@ -1,6 +1,10 @@
-<div class="wrapper">
-    <div class="header">
-        <button class="login-btn"(click)="handleClick()">Нэвтрэх</button>
-    </div>
-    <app-navbar></app-navbar>
+<div class="body">
+  <app-feature-card
+    *ngFor="let featureCard of featureCards"
+    [headerText]="featureCard.header"
+    [paragraphText]="featureCard.paragraph"
+    [buttonText]="featureCard.buttonText"
+    [imageUrl]="featureCard.imageUrl"
+    [reverse]="featureCard.reverse">
+  </app-feature-card>
 </div>

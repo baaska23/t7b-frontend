@@ -17,6 +17,8 @@ import { AppFooterComponent } from './app.footer.component';
 import { AppConfigModule } from './config/config.module';
 import { AppSidebarComponent } from "./app.sidebar.component";
 import { AppLayoutComponent } from "./app.layout.component";
+import { NavbarComponent } from "src/t7b/components/navbar/navbar.component";
+import { FooterComponent } from "src/t7b/components/footer/footer.component";
 
 @NgModule({
     declarations: [
@@ -28,19 +30,21 @@ import { AppLayoutComponent } from "./app.layout.component";
         AppLayoutComponent,
     ],
     imports: [
-        BrowserModule,
-        FormsModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        InputTextModule,
-        SidebarModule,
-        BadgeModule,
-        RadioButtonModule,
-        InputSwitchModule,
-        RippleModule,
-        RouterModule,
-        AppConfigModule
-    ],
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    InputTextModule,
+    SidebarModule,
+    BadgeModule,
+    RadioButtonModule,
+    InputSwitchModule,
+    RippleModule,
+    RouterModule,
+    AppConfigModule,
+    NavbarComponent,
+    FooterComponent
+],
     exports: [AppLayoutComponent]
 })
 export class AppLayoutModule { }
