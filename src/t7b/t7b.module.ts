@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { AdminPageComponent } from "./pages/admin/admin-page.component";
 import { ClassPageComponent } from "./pages/class/class-page.component";
-import { DiscussPageComponent } from "./pages/discuss/discuss-page.component";
 import { GuidePageComponent } from "./pages/guide/guide-page.component";
 import { HomePageComponent } from "./pages/home/home-page.component";
 import { LoginDialogComponent } from "./dialogs/login/login-dialog.component";
@@ -32,7 +31,6 @@ import { CreatePostComponent } from "./components/create-post/create-post.compon
     declarations: [
         AdminPageComponent,
         ClassPageComponent,
-        DiscussPageComponent,
         GuidePageComponent,
         HomePageComponent,
         LoginDialogComponent,

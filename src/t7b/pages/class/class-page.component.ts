@@ -88,7 +88,7 @@ export class ClassPageComponent extends BaseListComponent {
         super(injector, service)
     }
 
-    onPost() {
+    onCreate() {
         this._dialogRef = this._dialogService.open(CreatePostComponent, {
             width: '25vw',
             height: '35vw'
