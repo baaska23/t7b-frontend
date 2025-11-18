@@ -1,0 +1,22 @@
+<div class="send-page">
+    <div class="send-header">
+        <h2>Send thesis</h2>
+        <button (click)="onSend()">Send</button>
+    </div>
+    <p-table [columns]="cols" [value]="theses" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns">
+                    {{ col.header }}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                <td *ngFor="let col of columns">
+                    {{ rowData[col.field] }}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

@@ -15,6 +15,7 @@ import { FeatureCard } from "./components/feature-card/feature-card.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { PostComponent } from "./components/post/post.component";
 import { CreatePostComponent } from "./components/create-post/create-post.component";
+import { TableModule } from "primeng/table";
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import { CreatePostComponent } from "./components/create-post/create-post.compon
     FeatureCard,
     FooterComponent,
     PostComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    TableModule
 ],
 
     declarations: [
