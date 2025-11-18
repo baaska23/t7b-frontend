@@ -1,0 +1,79 @@
+.class-page {
+  max-width: 800px;
+  margin: 40px auto;
+  /* Remove card-like styles */
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding-bottom: 32px;
+  overflow: visible;
+}
+
+.cover-photo {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
+.cover-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info-section {
+  padding: 24px 32px 12px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.info-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.info-section span {
+  font-size: 1.1rem;
+  color: #666;
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 4px 16px;
+}
+
+.create-post {
+  padding: 20px 32px 0 32px;
+}
+
+.create-post input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  outline: none;
+  transition: border 0.2s;
+  background: #fff;
+}
+
+.create-post input:focus {
+  border: 1.5px solid #00d395;
+}
+
+.newsfeed {
+  padding: 0 32px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

@@ -1,0 +1,26 @@
+<div class="post">
+    <div class="post-content">
+        <div class="upper">
+            {{author}}
+            {{createdAgo}}
+        </div>
+        <div class="body">
+            {{post}}
+        </div>
+        <div class="lower">
+            <span class="icon-group">
+                <i class="fa fa-thumbs-up"></i> {{likeCount}}
+            </span>
+            <span class="icon-group">
+                <i class="fa fa-thumbs-down"></i> {{dislikeCount}}
+            </span>
+            <button (click)="handleClick()">Comments</button>
+            <ng-container *ngIf="showComment">
+                <div *ngFor="let comment of comments">
+                    <strong>{{comment.author}}</strong> <span>{{comment.createdAgo}}</span>
+                    <div>{{comment.comment}}</div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

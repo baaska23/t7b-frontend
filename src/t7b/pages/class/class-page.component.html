@@ -1,0 +1,24 @@
+<div class="class-page">
+    <div class="cover-photo">
+        <img src="assets/t7b/cover.png" alt="cover-photo" />
+    </div>
+    <div class="info-section">
+        <h2>Software Engineering 2025-2026</h2>
+        <span>12 students</span>
+        <span>N.Batnyam</span>
+    </div>
+    <div class="create-post">
+        <input (click)="onPost()" placeholder="What you need to do ask ?"/>
+    </div>
+    <div class="newsfeed">
+        <app-post
+            *ngFor="let post of posts"
+            [author]="post.author"
+            [createdAgo]="post.createdAgo"
+            [post]="post.post"
+            [likeCount]="post.likeCount"
+            [dislikeCount]="post.dislikeCount"
+            [comments]="post.comments"
+        ></app-post>
+    </div>
+</div>

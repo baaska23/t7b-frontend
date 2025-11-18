@@ -1,0 +1,17 @@
+<div class="create-post">
+    <div class="upper">
+        {{author}}
+    </div>
+    <div class="post-section">
+        <input placeholder="Create a post"/>
+        <div class="dropdown">
+            <div id="dropdown-content" class="dropdown-content">
+                <label><input type="checkbox" value="apple"> Announcement</label>
+                <label><input type="checkbox" value="banana"> Urgent</label>
+                <label><input type="checkbox" value="orange"> Tips</label>
+                <label><input type="checkbox" value="grape"> Question</label>
+            </div>
+        </div>
+    </div>
+    <button (click)="onSubmit">Post</button>
+</div>
