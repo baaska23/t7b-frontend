@@ -1,0 +1,13 @@
+<div class="template-page">
+    <h2>Templates</h2>
+    <div class="template-cards">
+        <app-template-card
+            *ngFor="let template of templates"
+            [title]="template.title"
+            [mainField]="template.mainField"
+            [subField]="template.subField"
+            [createdAt]="template.createdAt"
+            [onClick]="template.onClick"
+        ></app-template-card>
+    </div>
+</div>
