@@ -17,6 +17,7 @@ import { PostComponent } from "./components/post/post.component";
 import { CreatePostComponent } from "./components/create-post/create-post.component";
 import { TableModule } from "primeng/table";
 import { ThesisCard } from "./components/thesis-card/thesis-card.component";
+import { GuideCard } from "src/t7b/components/guide-card/guide-card.component";
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import { ThesisCard } from "./components/thesis-card/thesis-card.component";
     PostComponent,
     CreatePostComponent,
     TableModule,
-    ThesisCard
+    ThesisCard,
+    GuideCard
 ],
 
     declarations: [
