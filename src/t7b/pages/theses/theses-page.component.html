@@ -1,0 +1,17 @@
+<div class="theses-page">
+    <h2>Theses examples</h2>
+    <div class="thesis-cards">
+        <app-thesis-card
+            *ngFor="let thesis of theses"
+            [author]="thesis.author"
+            [title]="thesis.title"
+            [mainField]="thesis.mainField"
+            [subField]="thesis.subField"
+            [publishedYear]="thesis.publishedYear"
+            [school]="thesis.school"
+            [grade]="thesis.grade"
+            [rating]="thesis.rating"
+            [onClick]="thesis.onClick"
+        ></app-thesis-card>
+    </div>
+</div>

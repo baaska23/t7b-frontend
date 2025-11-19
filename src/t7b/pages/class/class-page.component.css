@@ -1,12 +1,12 @@
 .class-page {
-  max-width: 800px;
-  margin: 40px auto;
-  /* Remove card-like styles */
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding-bottom: 32px;
-  overflow: visible;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px 0;
+  align-items: center;
+  justify-content: center; 
+  min-height: 100vh;
 }
 
 .cover-photo {
