@@ -18,11 +18,11 @@ export class ClassService {
         return this.http.post<any>(`${environment.url}/classes`, data);
     }
 
-    update(id: string, data: any): Observable<any> {
+    update(id: number, data: any): Observable<any> {
         return this.http.put<any>(`${environment.url}/classes/${id}`, data);
     }
 
-    delete(id: string): Observable<any> {
+    delete(id: number): Observable<any> {
         return this.http.delete<any>(`${environment.url}/classes/${id}`);
     }
 

@@ -2,7 +2,7 @@
     <div class="post-content">
         <div class="upper">
             {{author}}
-            {{createdAgo}}
+            {{createdAgoText}}
         </div>
         <div class="body">
             {{post}}
@@ -17,7 +17,7 @@
             <button (click)="handleClick()">Comments</button>
             <ng-container *ngIf="showComment">
                 <div *ngFor="let comment of comments">
-                    <strong>{{comment.author}}</strong> <span>{{comment.createdAgo}}</span>
+                    <strong>{{comment.author}}</strong> <span>{{comment.createdAgoText}}</span>
                     <div>{{comment.comment}}</div>
                 </div>
             </ng-container>

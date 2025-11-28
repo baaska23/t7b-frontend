@@ -21,4 +21,15 @@ export class PostComponent {
     handleClick() {
         this.showComment = !this.showComment
     }
+
+    get createdAgoText(): string {
+        if (!this.createdAgo) return '';
+        const created = new Date(this.createdAgo);
+        const now = new Date();
+        const diffMs = now.getTime() - created.getTime();
+        const diffMin = Math.floor(diffMs / 60000);
+        if (diffMin < 1) return 'just now';
+        if (diffMin === 1) return '1 min ago';
+        return `${diffMin} min ago`;
+    }
 }
