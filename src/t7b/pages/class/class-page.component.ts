@@ -1,5 +1,6 @@
-import { Component, Injector } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, Injector, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { CreateClassComponent } from "src/t7b/components/create-class/create-class.component";
 import { CreatePostComponent } from "src/t7b/components/create-post/create-post.component";
 import { BaseListComponent } from "src/t7b/core/base-list/base-list.component";
 import { ClassService } from "src/t7b/services/class.service";
@@ -9,10 +10,11 @@ import { ClassService } from "src/t7b/services/class.service";
     templateUrl: './class-page.component.html',
     styleUrls: ['./class-page.component.css']
 })
-export class ClassPageComponent extends BaseListComponent {
+export class ClassPageComponent extends BaseListComponent implements OnInit {
     name: string;
-    totalStudents: number;
     professor: string;
+    professorId: number = 1;
+    class: any[] = [];
 
     posts = [
         {
@@ -83,16 +85,39 @@ export class ClassPageComponent extends BaseListComponent {
     constructor(
         injector: Injector,
         private service: ClassService,
-        private router: Router
+        private router: Router,
+        private route: ActivatedRoute
     ) {
         super(injector, service)
     }
 
-    onCreate() {
+    onPost() {
         this._dialogRef = this._dialogService.open(CreatePostComponent, {
             width: '25vw',
             height: '35vw'
         })
-        this._dialogRef.onClose.subscribe((v: string) => {})
+        this._dialogRef.onClose.subscribe((v: string) => {});
     }
+
+    onCreate() {
+        this._dialogRef = this._dialogService.open(CreateClassComponent, {
+            width: '25vw',
+            height: '35vw'
+        })
+        this._dialogRef.onClose.subscribe((v: string) => {});
+    }
+    
+    ngOnInit(): void {
+    const classId = this.route.snapshot.paramMap.get('classId');
+    if (classId) {
+        this.service.getById(+classId).subscribe((data: any) => {
+            this.class = data;
+            this.name = data.className;
+            this.professorId = data.professorId || '1 static';
+            console.log('Loaded class:', data);
+        }, error => {
+            console.error('Error loading class:', error);
+        });
+    }
+}
 }

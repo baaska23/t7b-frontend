@@ -20,6 +20,8 @@ import { ThesisCard } from "./components/thesis-card/thesis-card.component";
 import { GuideCard } from "src/t7b/components/guide-card/guide-card.component";
 import { TemplatesPageComponent } from "./pages/templates/templates-page.component";
 import { TemplateCard } from "src/t7b/components/template-card/template-card.component";
+import { ClassCard } from "./components/class-card/class-card.component";
+import { ClassListPageComponent } from "./pages/class-list/class-list-page.component";
 
 @NgModule({
     imports: [
@@ -34,7 +36,9 @@ import { TemplateCard } from "src/t7b/components/template-card/template-card.com
     TableModule,
     ThesisCard,
     GuideCard,
-    TemplateCard
+    TemplateCard,
+    CreatePostComponent,
+    ClassCard
 ],
 
     declarations: [
@@ -46,7 +50,8 @@ import { TemplateCard } from "src/t7b/components/template-card/template-card.com
         ProfilePageComponent,
         SendPageComponent,
         ThesesPageComponent,
-        TemplatesPageComponent
+        TemplatesPageComponent,
+        ClassListPageComponent
     ]
 })
 export class t7bModule {}

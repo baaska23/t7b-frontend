@@ -9,12 +9,14 @@ import { ProfilePageComponent } from "./pages/profile/profile-page.component";
 import { SendPageComponent } from "./pages/send/send-page.component";
 import { ThesesPageComponent } from "./pages/theses/theses-page.component";
 import { TemplatesPageComponent } from "./pages/templates/templates-page.component";
+import { ClassListPageComponent } from "./pages/class-list/class-list-page.component";
 
 @NgModule({
     imports: [RouterModule.forChild([
         { path: '', redirectTo: 'home', pathMatch: 'full' },
         {path: 'admin', component: AdminPageComponent},
-        {path: 'class', component: ClassPageComponent},
+        {path: 'class-list', component: ClassListPageComponent},
+        {path: 'class-list/:classId', component: ClassPageComponent},
         {path: 'guide', component: GuidePageComponent},
         {path: 'home', component: HomePageComponent},
         {path: 'login', component: LoginDialogComponent},

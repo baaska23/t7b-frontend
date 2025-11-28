@@ -1,0 +1,16 @@
+<div class="create-class">
+    <div class="upper">
+    </div>
+    <div class="class-section">
+        <input 
+            [(ngModel)]="name" 
+            placeholder="Class name"
+        />
+        <input
+            [(ngModel)]="description"
+            placeholder="Class description"
+        />
+        
+    </div>
+    <button (click)="onCreate()" [disabled]="isCreating">Create</button>
+</div>

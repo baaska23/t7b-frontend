@@ -3,12 +3,14 @@
         <img src="assets/t7b/cover.png" alt="cover-photo" />
     </div>
     <div class="info-section">
-        <h2>Software Engineering 2025-2026</h2>
-        <span>12 students</span>
-        <span>N.Batnyam</span>
+        <h2>{{ name || 'Static name' }}</h2>
+        <span>{{ professor || 'Static professor' }}</span>
+    </div>
+    <div class="create-class">
+        <button (click)="onCreate()">Create class</button>
     </div>
     <div class="create-post">
-        <input (click)="onCreate()" placeholder="What you need to do ask ?"/>
+        <input (click)="onPost()" placeholder="What you need to do ask ?"/>
     </div>
     <div class="newsfeed">
         <app-post

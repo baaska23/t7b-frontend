@@ -1,0 +1,14 @@
+<div class="class-list-page">
+    <div class="info-section">
+        <h2>My class</h2>
+    </div>
+    <div class="class-grid">
+        <app-class-card
+            *ngFor="let c of classes"
+            [classId]="c.classId"
+            [className]="c.className"
+            [description]="c.description"
+            (cardClick)="goToClass($event)"
+        ></app-class-card>
+    </div>
+</div>

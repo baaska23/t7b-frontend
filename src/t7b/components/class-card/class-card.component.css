@@ -1,0 +1,61 @@
+.class-card {
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.class-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 3px 8px rgba(0,0,0,0.09);
+}
+
+.info-section {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 24px;
+  text-align: center;
+  flex: 1;
+}
+
+.button {
+  margin-bottom: 24px;
+}
+
+.button button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #1976d2;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button button:hover {
+  background: #125ea2;
+}
