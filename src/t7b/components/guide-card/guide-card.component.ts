@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 @Component({
@@ -10,10 +10,16 @@ import { RouterModule } from "@angular/router";
     styleUrls: ['./guide-card.component.css']
 })
 export class GuideCard {
+    @Input() guideId: number;
     @Input() author: string;
     @Input() title: string;
     @Input() category: string;
     @Input() school: string;
     @Input() createdAt: string;
-    @Input() onClick: Function;
+    @Output() cardClick = new EventEmitter<number>();
+
+    onCardClick() {
+        console.log("clicked:", this.guideId);
+        this.cardClick.emit(this.guideId);
+    }
 }

@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { AdminPageComponent } from "./pages/admin/admin-page.component";
 import { ClassPageComponent } from "./pages/class/class-page.component";
-import { GuidePageComponent } from "./pages/guide/guide-page.component";
+import { GuideListPageComponent } from "./pages/guide-list/guide-list-page.component";
 import { HomePageComponent } from "./pages/home/home-page.component";
 import { LoginDialogComponent } from "./dialogs/login/login-dialog.component";
 import { ProfilePageComponent } from "./pages/profile/profile-page.component";
@@ -22,6 +22,7 @@ import { TemplatesPageComponent } from "./pages/templates/templates-page.compone
 import { TemplateCard } from "src/t7b/components/template-card/template-card.component";
 import { ClassCard } from "./components/class-card/class-card.component";
 import { ClassListPageComponent } from "./pages/class-list/class-list-page.component";
+import { GuidePageComponent } from "./pages/guide/guide-page.component";
 
 @NgModule({
     imports: [
@@ -44,14 +45,15 @@ import { ClassListPageComponent } from "./pages/class-list/class-list-page.compo
     declarations: [
         AdminPageComponent,
         ClassPageComponent,
-        GuidePageComponent,
+        GuideListPageComponent,
         HomePageComponent,
         LoginDialogComponent,
         ProfilePageComponent,
         SendPageComponent,
         ThesesPageComponent,
         TemplatesPageComponent,
-        ClassListPageComponent
+        ClassListPageComponent,
+        GuidePageComponent
     ]
 })
 export class t7bModule {}

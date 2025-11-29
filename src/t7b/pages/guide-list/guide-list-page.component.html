@@ -1,0 +1,15 @@
+<div class="guide-page">
+    <h2>Guidance</h2>
+    <div class="guide-cards">
+        <app-guide-card
+            *ngFor="let guide of guides"
+            [guideId]="guide.guidanceId"
+            [author]="guide.author"
+            [title]="guide.title"
+            [category]="guide.category"
+            [school]="guide.school"
+            [createdAt]="guide.createdAt"
+            (cardClick)="goToGuidance($event)"
+        ></app-guide-card>
+    </div>
+</div>

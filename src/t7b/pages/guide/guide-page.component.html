@@ -1,14 +1,18 @@
 <div class="guide-page">
-    <h2>Guidance</h2>
-    <div class="guide-cards">
-        <app-guide-card
-            *ngFor="let guide of guides"
-            [author]="guide.author"
-            [title]="guide.title"
-            [category]="guide.category"
-            [school]="guide.school"
-            [createdAt]="guide.createdAt"
-            [onClick]="guide.onClick"
-        ></app-guide-card>
+    <div class="guide-list">
+        <div class="guide-card">
+            <h3>{{ guide.title }}</h3>
+            <div class="guide-meta">
+                <span>By: {{ guide.uploadedBy?.username }}</span>
+                <span>• {{ getMinutesAgo(guide.createdAt) }}</span>
+            </div>
+            <p class="guide-content">
+                {{ guide.content }}
+            </p>
+            <div class="guide-actions">
+                <span>👍 {{ guide.likeCount }}</span>
+                <span>👎 {{ guide.dislikeCount }}</span>
+            </div>
+        </div>
     </div>
 </div>

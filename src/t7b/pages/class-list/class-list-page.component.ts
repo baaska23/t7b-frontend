@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { ClassService } from "src/t7b/services/class.service";
 
 @Component({
-    selector: 'app-class-list',
+    selector: 'app-class-list-page',
     templateUrl: './class-list-page.component.html',
     styleUrls: ['./class-list-page.component.css'],
 })
