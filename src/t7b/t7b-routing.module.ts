@@ -8,9 +8,10 @@ import { LoginDialogComponent } from "./dialogs/login/login-dialog.component";
 import { ProfilePageComponent } from "./pages/profile/profile-page.component";
 import { SendPageComponent } from "./pages/send/send-page.component";
 import { ThesesPageComponent } from "./pages/theses/theses-page.component";
-import { TemplatesPageComponent } from "./pages/templates/templates-page.component";
+import { TemplateListPageComponent } from "./pages/template-list/template-list-page.component";
 import { ClassListPageComponent } from "./pages/class-list/class-list-page.component";
 import { GuidePageComponent } from "./pages/guide/guide-page.component";
+import { TemplatePageComponent } from "./pages/template/template-page.component";
 
 @NgModule({
     imports: [RouterModule.forChild([
@@ -25,7 +26,8 @@ import { GuidePageComponent } from "./pages/guide/guide-page.component";
         {path: 'profile', component: ProfilePageComponent},
         {path: 'send', component: SendPageComponent},
         {path: 'theses', component: ThesesPageComponent},
-        {path: 'templates', component: TemplatesPageComponent}
+        {path: 'template-list', component: TemplateListPageComponent},
+        {path: 'template-list/:templateId', component: TemplatePageComponent}
     ])]
 })
 export class t7bRoutingModule {}

@@ -18,11 +18,12 @@ import { CreatePostComponent } from "./components/create-post/create-post.compon
 import { TableModule } from "primeng/table";
 import { ThesisCard } from "./components/thesis-card/thesis-card.component";
 import { GuideCard } from "src/t7b/components/guide-card/guide-card.component";
-import { TemplatesPageComponent } from "./pages/templates/templates-page.component";
+import { TemplateListPageComponent } from "./pages/template-list/template-list-page.component";
 import { TemplateCard } from "src/t7b/components/template-card/template-card.component";
 import { ClassCard } from "./components/class-card/class-card.component";
 import { ClassListPageComponent } from "./pages/class-list/class-list-page.component";
 import { GuidePageComponent } from "./pages/guide/guide-page.component";
+import { TemplatePageComponent } from "./pages/template/template-page.component";
 
 @NgModule({
     imports: [
@@ -51,9 +52,10 @@ import { GuidePageComponent } from "./pages/guide/guide-page.component";
         ProfilePageComponent,
         SendPageComponent,
         ThesesPageComponent,
-        TemplatesPageComponent,
+        TemplateListPageComponent,
         ClassListPageComponent,
-        GuidePageComponent
+        GuidePageComponent,
+        TemplatePageComponent
     ]
 })
 export class t7bModule {}

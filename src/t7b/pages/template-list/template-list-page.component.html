@@ -3,11 +3,12 @@
     <div class="template-cards">
         <app-template-card
             *ngFor="let template of templates"
+            [templateId]="template.templateId"
             [title]="template.title"
             [mainField]="template.mainField"
             [subField]="template.subField"
             [createdAt]="template.createdAt"
-            [onClick]="template.onClick"
+            (cardClick)="goToTemplate($event)"
         ></app-template-card>
     </div>
 </div>

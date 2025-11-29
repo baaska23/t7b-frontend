@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
     selector: 'app-template-card',
@@ -9,9 +9,15 @@ import { Component, Input } from "@angular/core";
     styleUrls: ['./template-card.component.css']
 })
 export class TemplateCard {
+    @Input() templateId: number;
     @Input() title: string;
     @Input() mainField: string;
     @Input() subField: string;
     @Input() createdAt: string;
-    @Input() onClick: Function;
+    @Output() cardClick = new EventEmitter<number>();
+    
+    onCardClick() {
+        console.log("clicked:", this.templateId);
+        this.cardClick.emit(this.templateId);
+    }
 }

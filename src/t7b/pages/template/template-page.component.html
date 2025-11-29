@@ -1,0 +1,14 @@
+<div class="template-page">
+    <div class="template-list">
+        <div class="template-card">
+            <h3>{{ template.title }}</h3>
+            <div class="guide-meta">
+                <span>By: {{ template.uploadedBy?.username }}</span>
+                <span>• {{ getMinutesAgo(template.createdAt) }}</span>
+            </div>
+            <p class="guide-content">
+                {{ template.templateLink }}
+            </p>
+        </div>
+    </div>
+</div>
