@@ -1,0 +1,25 @@
+.thesis-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 96px auto;
+  max-width: 600px;
+}
+.thesis-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 24px;
+}
+.thesis-meta {
+  color: #888;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+}
+.thesis-content {
+  margin-bottom: 16px;
+}
+.thesis-actions span {
+  margin-right: 16px;
+  font-size: 1.1em;
+}

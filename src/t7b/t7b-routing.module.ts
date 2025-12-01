@@ -7,11 +7,12 @@ import { HomePageComponent } from "./pages/home/home-page.component";
 import { LoginDialogComponent } from "./dialogs/login/login-dialog.component";
 import { ProfilePageComponent } from "./pages/profile/profile-page.component";
 import { SendPageComponent } from "./pages/send/send-page.component";
-import { ThesesPageComponent } from "./pages/theses/theses-page.component";
+import { ThesesListPageComponent } from "./pages/theses-list/theses-list-page.component";
 import { TemplateListPageComponent } from "./pages/template-list/template-list-page.component";
 import { ClassListPageComponent } from "./pages/class-list/class-list-page.component";
 import { GuidePageComponent } from "./pages/guide/guide-page.component";
 import { TemplatePageComponent } from "./pages/template/template-page.component";
+import { ThesisPageComponent } from "./pages/thesis/thesis-page.component";
 
 @NgModule({
     imports: [RouterModule.forChild([
@@ -25,7 +26,8 @@ import { TemplatePageComponent } from "./pages/template/template-page.component"
         {path: 'login', component: LoginDialogComponent},
         {path: 'profile', component: ProfilePageComponent},
         {path: 'send', component: SendPageComponent},
-        {path: 'theses', component: ThesesPageComponent},
+        {path: 'theses-list', component: ThesesListPageComponent},
+        {path: 'theses-list/:thesisId', component: ThesisPageComponent},
         {path: 'template-list', component: TemplateListPageComponent},
         {path: 'template-list/:templateId', component: TemplatePageComponent}
     ])]

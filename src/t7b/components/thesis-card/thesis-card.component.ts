@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { Button } from "primeng/button";
 
@@ -11,6 +11,7 @@ import { Button } from "primeng/button";
     styleUrls: ['./thesis-card.component.css']
 })
 export class ThesisCard {
+    @Input() thesisId: number;
     @Input() author: string;
     @Input() title: string;
     @Input() mainField: string;
@@ -19,5 +20,10 @@ export class ThesisCard {
     @Input() school: string;
     @Input() grade: number;
     @Input() rating: number;
-    @Input() onClick: Function;
+    @Output() cardClick = new EventEmitter<number>();
+
+    onCardClick() {
+        console.log("clicked:", this.thesisId);
+        this.cardClick.emit(this.thesisId);
+    }
 }

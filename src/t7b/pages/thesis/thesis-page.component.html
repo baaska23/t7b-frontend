@@ -1,0 +1,15 @@
+<div class="thesis-page">
+    <div class="thesis-list">
+        <div class="thesis-card">
+            <h3>{{ thesis.title }}</h3>
+            <div class="thesis-meta">
+                <span>By: {{ thesis.author?.username }}</span>
+                <span>• {{ getMinutesAgo(thesis.uploaded) }}</span>
+            </div>
+            <p class="thesis-content">
+                {{ thesis.thesisLink }}
+                {{ thesis.grade}}
+            </p>
+        </div>
+    </div>
+</div>

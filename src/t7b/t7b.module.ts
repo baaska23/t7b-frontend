@@ -7,7 +7,7 @@ import { HomePageComponent } from "./pages/home/home-page.component";
 import { LoginDialogComponent } from "./dialogs/login/login-dialog.component";
 import { ProfilePageComponent } from "./pages/profile/profile-page.component";
 import { SendPageComponent } from "./pages/send/send-page.component";
-import { ThesesPageComponent } from "./pages/theses/theses-page.component";
+import { ThesesListPageComponent } from "./pages/theses-list/theses-list-page.component";
 import { t7bRoutingModule } from "./t7b-routing.module";
 import { NavbarComponent } from "src/t7b/components/navbar/navbar.component";
 import { RouterModule } from "@angular/router";
@@ -24,6 +24,7 @@ import { ClassCard } from "./components/class-card/class-card.component";
 import { ClassListPageComponent } from "./pages/class-list/class-list-page.component";
 import { GuidePageComponent } from "./pages/guide/guide-page.component";
 import { TemplatePageComponent } from "./pages/template/template-page.component";
+import { ThesisPageComponent } from "./pages/thesis/thesis-page.component";
 
 @NgModule({
     imports: [
@@ -51,11 +52,12 @@ import { TemplatePageComponent } from "./pages/template/template-page.component"
         LoginDialogComponent,
         ProfilePageComponent,
         SendPageComponent,
-        ThesesPageComponent,
+        ThesesListPageComponent,
         TemplateListPageComponent,
         ClassListPageComponent,
         GuidePageComponent,
-        TemplatePageComponent
+        TemplatePageComponent,
+        ThesisPageComponent
     ]
 })
 export class t7bModule {}
