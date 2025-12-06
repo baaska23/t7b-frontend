@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-header',
@@ -7,10 +8,13 @@ import { Component } from "@angular/core";
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-    constructor() {}
+    constructor(
+        private router: Router
+    ) {}
 
-    goToProfile() {
-        // TODO: implement profile page
-        // TODO: implement profile routing page
+    profileId: number = 1;
+
+    goToProfile(profileId: number) {
+        this.router.navigate(['t7b', 'profile', profileId]);
     }
 }

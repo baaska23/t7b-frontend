@@ -24,7 +24,7 @@ import { ThesisPageComponent } from "./pages/thesis/thesis-page.component";
         {path: 'guide-list/:guideId', component: GuidePageComponent},
         {path: 'home', component: HomePageComponent},
         {path: 'login', component: LoginDialogComponent},
-        {path: 'profile', component: ProfilePageComponent},
+        {path: 'profile/:profileId', component: ProfilePageComponent},
         {path: 'send', component: SendPageComponent},
         {path: 'theses-list', component: ThesesListPageComponent},
         {path: 'theses-list/:thesisId', component: ThesisPageComponent},
