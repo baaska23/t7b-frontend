@@ -19,6 +19,8 @@ import { AppSidebarComponent } from "./app.sidebar.component";
 import { AppLayoutComponent } from "./app.layout.component";
 import { NavbarComponent } from "src/t7b/components/navbar/navbar.component";
 import { FooterComponent } from "src/t7b/components/footer/footer.component";
+import { CdkDragPlaceholder } from "@angular/cdk/drag-drop";
+import { SidebarComponent } from "src/t7b/components/sidebar/sidebar.component";
 
 @NgModule({
     declarations: [
@@ -43,7 +45,9 @@ import { FooterComponent } from "src/t7b/components/footer/footer.component";
     RouterModule,
     AppConfigModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CdkDragPlaceholder,
+    SidebarComponent
 ],
     exports: [AppLayoutComponent]
 })

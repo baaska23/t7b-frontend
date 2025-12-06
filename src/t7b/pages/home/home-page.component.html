@@ -1,10 +1,14 @@
-<div class="body">
-  <app-feature-card
-    *ngFor="let featureCard of featureCards"
-    [headerText]="featureCard.header"
-    [paragraphText]="featureCard.paragraph"
-    [buttonText]="featureCard.buttonText"
-    [imageUrl]="featureCard.imageUrl"
-    [reverse]="featureCard.reverse">
-  </app-feature-card>
+<div class="main">
+  <app-navbar></app-navbar>
+  <div class="body">
+    <app-feature-card
+      *ngFor="let featureCard of featureCards"
+      [headerText]="featureCard.header"
+      [paragraphText]="featureCard.paragraph"
+      [buttonText]="featureCard.buttonText"
+      [imageUrl]="featureCard.imageUrl"
+      [reverse]="featureCard.reverse">
+    </app-feature-card>
+  </div>
+  <app-footer></app-footer>
 </div>

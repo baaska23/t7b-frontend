@@ -18,6 +18,8 @@ export class AppLayoutComponent implements OnDestroy {
 
     profileMenuOutsideClickListener: any;
 
+    isHomePage: boolean = false;
+
     @ViewChild(AppSidebarComponent) appSidebar!: AppSidebarComponent;
 
     @ViewChild(AppTopBarComponent) appTopbar!: AppTopBarComponent;
@@ -56,6 +58,9 @@ export class AppLayoutComponent implements OnDestroy {
                 this.hideMenu();
                 this.hideProfileMenu();
             });
+        this.router.events.subscribe(() => {
+            this.isHomePage = this.router.url === '/t7b/home';
+        })
     }
 
     hideMenu() {

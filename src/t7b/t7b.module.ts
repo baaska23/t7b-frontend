@@ -25,6 +25,7 @@ import { ClassListPageComponent } from "./pages/class-list/class-list-page.compo
 import { GuidePageComponent } from "./pages/guide/guide-page.component";
 import { TemplatePageComponent } from "./pages/template/template-page.component";
 import { ThesisPageComponent } from "./pages/thesis/thesis-page.component";
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
 
 @NgModule({
     imports: [
@@ -32,6 +33,7 @@ import { ThesisPageComponent } from "./pages/thesis/thesis-page.component";
     RouterModule,
     t7bRoutingModule,
     NavbarComponent,
+    SidebarComponent,
     FeatureCard,
     FooterComponent,
     PostComponent,
