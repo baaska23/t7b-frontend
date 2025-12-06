@@ -26,6 +26,7 @@ import { GuidePageComponent } from "./pages/guide/guide-page.component";
 import { TemplatePageComponent } from "./pages/template/template-page.component";
 import { ThesisPageComponent } from "./pages/thesis/thesis-page.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { HeaderComponent } from "./components/header/header.component";
 
 @NgModule({
     imports: [
@@ -43,7 +44,8 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
     GuideCard,
     TemplateCard,
     CreatePostComponent,
-    ClassCard
+    ClassCard,
+    HeaderComponent
 ],
 
     declarations: [

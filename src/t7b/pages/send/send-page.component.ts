@@ -84,4 +84,6 @@ export class SendPageComponent extends BaseListComponent {
         })
         this._dialogRef.onClose.subscribe((v: string) => {})
     }
+
+    // CRITICAL: connect with cloudflare r2
 }

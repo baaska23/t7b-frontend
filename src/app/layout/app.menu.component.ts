@@ -22,7 +22,7 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Theses', icon: 'pi pi-fw pi-home', routerLink: ['/t7b/theses-list']},
                     {label: 'Templates', icon: 'pi pi-fw pi-home', routerLink: ['/t7b/template-list']},
                     {label: 'Guide', icon: 'pi pi-fw pi-home', routerLink: ['/t7b/guide-list']},
-                    
+                    // TODO: add logout menu here
                 ]
             },
         ];

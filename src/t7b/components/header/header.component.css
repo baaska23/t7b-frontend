@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 64px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.header .left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.header .left img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+.header .right img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

@@ -1,6 +1,21 @@
 .layout-wrapper {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+.layout-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+app-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  flex-shrink: 0;
 }
 
 app-sidebar {
@@ -9,13 +24,12 @@ app-sidebar {
   max-width: 300px;
   background: #f8f9fa;
   box-shadow: 2px 0 8px rgba(0,0,0,0.04);
-  height: 100vh;
+  height: calc(100vh - var(--header-height, 60px));
   position: sticky;
-  top: 0;
+  top: var(--header-height, 60px);
   left: 0;
   z-index: 10;
   flex-shrink: 0;
-  background-color: var(--secondary-color);
 }
 
 .layout-main {

@@ -21,6 +21,7 @@ import { NavbarComponent } from "src/t7b/components/navbar/navbar.component";
 import { FooterComponent } from "src/t7b/components/footer/footer.component";
 import { CdkDragPlaceholder } from "@angular/cdk/drag-drop";
 import { SidebarComponent } from "src/t7b/components/sidebar/sidebar.component";
+import { HeaderComponent } from "src/t7b/components/header/header.component";
 
 @NgModule({
     declarations: [
@@ -47,7 +48,8 @@ import { SidebarComponent } from "src/t7b/components/sidebar/sidebar.component";
     NavbarComponent,
     FooterComponent,
     CdkDragPlaceholder,
-    SidebarComponent
+    SidebarComponent,
+    HeaderComponent
 ],
     exports: [AppLayoutComponent]
 })
